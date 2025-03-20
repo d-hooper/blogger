@@ -9,6 +9,7 @@ class BlogService {
 logger.log(`got them blogs`, response.data)
 const blogs = response.data.map(pojo => new blog(pojo))
 AppState.blogs = blogs
+logger.log(`no blog`, AppState.blogs)
    }
   }
 

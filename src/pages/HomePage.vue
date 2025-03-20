@@ -1,5 +1,6 @@
 <script setup>
 import { AppState } from '@/AppState.js';
+import BlogCard from '@/components/BlogCard.vue';
 import { blogService } from '@/services/BlogService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
@@ -24,7 +25,15 @@ async function getBlogs() {
 </script>
 
 <template>
-  <h1>{{ blogs }}</h1>
+  <section class="container">
+    <div class="row my-4">
+      <div v-for="blog in blogs" :key="blog.id" class="col-12">
+        <BlogCard :blogProp="blog" />
+      </div>
+    </div>
+
+  </section>
+
 </template>
 
 <style scoped lang="scss"></style>
