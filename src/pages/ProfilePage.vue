@@ -5,7 +5,7 @@ import { blogService } from '@/services/BlogService.js';
 import { profilesService } from '@/services/ProfilesService.js';
 import { logger } from '@/utils/Logger.js';
 import { Pop } from '@/utils/Pop.js';
-import { computed, onMounted } from 'vue';
+import { computed, onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute()
@@ -15,6 +15,11 @@ const profile = computed(() => AppState.activeProfile)
 const blogs = computed(() => AppState.blogs)
 
 onMounted(() => {
+  getProfileById()
+  getBlogsByCreatorId()
+})
+
+watch(route, () => {
   getProfileById()
   getBlogsByCreatorId()
 })
