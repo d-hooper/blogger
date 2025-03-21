@@ -51,7 +51,7 @@ async function getBlogsByCreatorId() {
   <section class="container">
     <div class="row">
       <div class="col-12">
-        <div>
+        <div class="text-center">
           <h1>Profile</h1>
         </div>
       </div>
@@ -60,9 +60,15 @@ async function getBlogsByCreatorId() {
   <section v-if="profile" class="container">
     <div class="row justify-content-center">
       <div class="col-10">
-        <div class="text-center background" :style="{ backgroundImage: `url(${profile.coverImg})` }">
-          <img :src="profile.picture" alt="This is my happy place">
-          <p class="display-4">{{ profile.name }}</p>
+        <div class="d-flex flex-column justify-content-between background rounded"
+             :style="{ backgroundImage: `url(${profile.coverImg})` }">
+          <div class="text-end me-2">
+            <img :src="profile.picture" alt="This is my happy place">
+          </div>
+          <div class="bg-light bg-opacity-75 p-3 text-indigo text-shadow rounded-bottom text-center">
+            <p class="display-4">{{ profile.name }}</p>
+            <p class="fs-5">{{ profile.bio }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -81,14 +87,22 @@ async function getBlogsByCreatorId() {
 
 <style lang="scss" scoped>
 img {
-  max-height: 50dvh;
+  height: 35dvh;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  padding: 2rem 0;
 }
 
 .background {
-  max-height: 100dvh;
+  height: 70dvh;
   width: 100%;
   background-size: cover;
   background-position: center;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 2px #000000;
 }
 </style>

@@ -34,22 +34,22 @@ async function updateAccount() {
 
 <template>
   <div class="p-3">
-    <h2>Update your account!</h2>
+    <h2>Update your account details!</h2>
     <form @submit.prevent="updateAccount()">
       <div class="mb-3">
-        <label for="accountName">Account Name</label>
+        <label for="accountName">Name</label>
         <input v-model="editableAccountData.name" type="text" name="name" id="accountName" required maxlength="100">
       </div>
       <div class="mb-3">
-        <label for="accountBio">Account Bio</label>
+        <label for="accountBio">About You</label>
         <textarea v-model="editableAccountData.bio" name="bio" id="accountBio" maxlength="1000"></textarea>
       </div>
       <div class="mb-3">
-        <label for="accountPicture">Account Picture</label>
+        <label for="accountPicture">Profile Picture</label>
         <input v-model="editableAccountData.picture" type="url" id="accountPicture" name="picture" maxlength="500">
       </div>
       <div class="mb-3">
-        <label for="accountCoverImg">Account CoverImg</label>
+        <label for="accountCoverImg">Background Image</label>
         <input v-model="editableAccountData.coverImg" type="url" id="accountCoverImg" name="coverImg" maxlength="500">
       </div>
       <div class="text-end">
@@ -60,4 +60,17 @@ async function updateAccount() {
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+label {
+  display: block
+}
+
+input,
+textarea {
+  width: 100%;
+}
+
+textarea {
+  min-height: 25dvh;
+}
+</style>
