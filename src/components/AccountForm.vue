@@ -22,7 +22,7 @@ async function updateAccount() {
 
     await accountService.updateAccount(editableAccountData.value)
   } catch (error) {
-    Pop.error(error, 'dont update account')
+    Pop.error(error, 'Cannot update account')
     logger.error('CANNOT UPDATE ACCOUNT', error)
 
   }

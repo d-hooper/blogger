@@ -23,14 +23,14 @@ function logout() {
     <div v-else>
       <div class="dropdown">
         <div role="button" class="bg-dark selectable no-select" data-bs-toggle="dropdown" aria-expanded="false"
-          title="open account menu">
+             title="open account menu">
           <div v-if="account?.picture || identity?.picture">
             <img :src="account?.picture || identity?.picture" alt="account photo" height="40" class="user-img" />
           </div>
         </div>
         <div class="dropdown-menu dropdown-menu-sm-end dropdown-menu-start p-0" role="menu" title="account menu">
           <div class="list-group">
-            <RouterLink v-if="account" :to="{ name: 'Profile', params: { profileId: account?.id } }">
+            <RouterLink v-if="account" :to="{ name: 'Profile', params: { profileId: account.id } }">
               <div class="list-group-item dropdown-item list-group-item-action">
                 Profile
               </div>

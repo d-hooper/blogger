@@ -40,8 +40,8 @@ async function getBlogsByCreatorId() {
     await blogService.getBlogsByCreatorId(profileId)
   }
   catch (error) {
-    Pop.error(error, 'Could not get profile page');
-    logger.error('COULD NOT GET PROFILE PAGE', error)
+    Pop.error(error, 'Could not get posts for this profile');
+    logger.error('COULD NOT GET POSTS FOR THIS PROFILE', error)
   }
 }
 </script>
